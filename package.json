@@ -1,0 +1,21 @@
+{
+  "name": "ians-ai-company",
+  "version": "1.0.0",
+  "description": "ian's AI 公司 - 企業級可視化營運與多代理人會議監控系統 (由 Google Antigravity 驅動)",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "node test/verify.js"
+  },
+  "keywords": [
+    "antigravity",
+    "ai-company",
+    "multi-agent",
+    "beige-minimalist",
+    "monitoring-dashboard"
+  ],
+  "author": "Ian",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ian's AI 公司 - 企業級可視化營運與多代理人會議監控系統</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 頂部導航列 -->
+  <header class="site-header">
+    <div class="app-container header-inner">
+      <a href="#" class="brand-wrap">
+        <div class="brand-badge">iA</div>
+        <div class="brand-titles">
+          <h1>ian's AI 公司</h1>
+          <div class="subtitle">Antigravity Multi-Agent Enterprise OS</div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <div class="status-pill" id="coreStatusPill">
+          <span class="pulse-dot"></span>
+          <span id="coreStatusText">Antigravity 核心在線</span>
+        </div>
+        <button class="btn-secondary" id="btnOpenChangelog">
+          <span>📜</span>
+          <span>更新紀錄</span>
+        </button>
+        <button class="btn-gold" id="btnOpenLogin">
+          <span>🔐</span>
+          <span id="loginBtnLabel">創辦人登入</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main class="app-container">
+    
+    <!-- 創辦人戰情總覽與一鍵開會控制中心 -->
+    <section class="hero-section">
+      <div class="hero-card">
+        <div class="hero-top">
+          <div class="hero-greeting">
+            <h2>創辦人 Ian 戰情指揮室</h2>
+            <p>由 Google Antigravity 驅動五大部門 AI 矩陣，負責為您執行獨立思考、會議辯論、通俗進度匯報與專案落地。</p>
+          </div>
+          <div class="metrics-strip">
+            <div class="metric-item">
+              <div class="label">五大部門</div>
+              <div class="value" style="color: var(--color-func);">5 陣容齊全</div>
+            </div>
+            <div class="metric-item">
+              <div class="label">會議狀態</div>
+              <div class="value" id="meetingStateMetric" style="color: var(--color-ux);">隨時可召開</div>
+            </div>
+            <div class="metric-item">
+              <div class="label">資安等級</div>
+              <div class="value" style="color: var(--color-sec);">零資料破壞防護</div>
+            </div>
+            <div class="metric-item">
+              <div class="label">雙端適配</div>
+              <div class="value" style="color: var(--brand-gold);">電腦 + 393×852</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 一鍵開始開會主控制台 -->
+        <div class="meeting-console-box">
+          <div class="console-header">
+            <div class="console-title">
+              <span>⚡</span>
+              <span>專案任務指派與圓桌會議中樞</span>
+            </div>
+            <span style="font-size: 12px; color: var(--text-muted);">
+              點擊後自動召集五大部門主管進行獨立思考與激烈激盪
+            </span>
+          </div>
+          <div class="meeting-input-row">
+            <input 
+              type="text" 
+              id="projectTopicInput" 
+              class="task-input-field" 
+              placeholder="請輸入欲製作的專案目標（例如：打造兼具米色美感與極致流暢的智慧學生單字卡工具）..."
+              value="打造兼具米色簡約美學與高互動體驗的智慧學習卡專案"
+            >
+            <button class="btn-start-meeting" id="btnStartMeeting">
+              <span>🚀</span>
+              <span>一鍵開始開會</span>
+            </button>
+          </div>
+          <div class="quick-tags-row">
+            <span class="tag-label">快速專案範本：</span>
+            <button class="quick-tag-chip" data-topic="打造兼具米色簡約美學與高互動體驗的智慧學習卡專案">智慧學習卡工具</button>
+            <button class="quick-tag-chip" data-topic="開發支援手機端 393×852 觸控優化的極簡會議紀要助理">極簡會議紀要助理</button>
+            <button class="quick-tag-chip" data-topic="建構符合零資料損壞原則的高安全性企業雲端知識庫">零損壞雲端知識庫</button>
+            <button class="quick-tag-chip" data-topic="設計頂級質感的米色自適應即時數據監控戰情板">米色數據戰情板</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 五大部門陣容卡片 (5 Departments Matrix) -->
+    <section>
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span>👥</span>
+          <span>五大核心部門 AI 專家矩陣</span>
+        </h2>
+        <span class="section-hint">每個 Agent 均具備獨立思考能力，在會議中各抒己見</span>
+      </div>
+
+      <div class="departments-grid" id="departmentsGrid">
+        <!-- 功能組 -->
+        <div class="dept-card func" id="deptCard-func">
+          <div class="dept-header">
+            <div class="dept-icon">⚙️</div>
+            <div class="dept-name-box">
+              <h3>功能組</h3>
+              <div class="lead-name">Alex (首席架構師) / Leo (邏輯工程師)</div>
+            </div>
+          </div>
+          <div class="dept-badge-row">
+            <span class="agent-state-badge state-idle" id="badge-func">
+              <span class="pulse-dot" style="width: 6px; height: 6px;"></span>
+              <span id="badgeText-func">在線待命</span>
+            </span>
+          </div>
+          <div class="dept-thought-box">
+            <div class="label">白話思緒動態</div>
+            <div id="thoughtText-func">正在等待董事長派發新專案任務，目前系統微服務與架構已就緒。</div>
+          </div>
+        </div>
+
+        <!-- 外觀組 -->
+        <div class="dept-card visual" id="deptCard-visual">
+          <div class="dept-header">
+            <div class="dept-icon">🎨</div>
+            <div class="dept-name-box">
+              <h3>外觀組</h3>
+              <div class="lead-name">Celia (美學總監) / Emma (風格造型師)</div>
+            </div>
+          </div>
+          <div class="dept-badge-row">
+            <span class="agent-state-badge state-idle" id="badge-visual">
+              <span class="pulse-dot" style="width: 6px; height: 6px;"></span>
+              <span id="badgeText-visual">在線待命</span>
+            </span>
+          </div>
+          <div class="dept-thought-box">
+            <div class="label">白話思緒動態</div>
+            <div id="thoughtText-visual">米色主色板與暖沙邊框規格已就緒，隨時可為新專案打造頂級視覺。</div>
+          </div>
+        </div>
+
+        <!-- 體驗組 -->
+        <div class="dept-card ux" id="deptCard-ux">
+          <div class="dept-header">
+            <div class="dept-icon">🖐️</div>
+            <div class="dept-name-box">
+              <h3>體驗組</h3>
+              <div class="lead-name">Julian (體驗研究長) / Nina (互動設計師)</div>
+            </div>
+          </div>
+          <div class="dept-badge-row">
+            <span class="agent-state-badge state-idle" id="badge-ux">
+              <span class="pulse-dot" style="width: 6px; height: 6px;"></span>
+              <span id="badgeText-ux">在線待命</span>
+            </span>
+          </div>
+          <div class="dept-thought-box">
+            <div class="label">白話思緒動態</div>
+            <div id="thoughtText-ux">已備妥雙端流暢互動驗證模型，嚴格把關每一處觸控手感與無障礙體驗。</div>
+          </div>
+        </div>
+
+        <!-- 資安組 -->
+        <div class="dept-card sec" id="deptCard-sec">
+          <div class="dept-header">
+            <div class="dept-icon">🛡️</div>
+            <div class="dept-name-box">
+              <h3>資安組</h3>
+              <div class="lead-name">Marcus (資安長 CSO) / Vera (隱私審查員)</div>
+            </div>
+          </div>
+          <div class="dept-badge-row">
+            <span class="agent-state-badge state-idle" id="badge-sec">
+              <span class="pulse-dot" style="width: 6px; height: 6px;"></span>
+              <span id="badgeText-sec">在線待命</span>
+            </span>
+          </div>
+          <div class="dept-thought-box">
+            <div class="label">白話思緒動態</div>
+            <div id="thoughtText-sec">安全閘門監控中，堅決落實「零資料更動原則」，保護所有資料安全。</div>
+          </div>
+        </div>
+
+        <!-- 測試及機動組 -->
+        <div class="dept-card qa" id="deptCard-qa">
+          <div class="dept-header">
+            <div class="dept-icon">⚡</div>
+            <div class="dept-name-box">
+              <h3>測試及機動組</h3>
+              <div class="lead-name">Ryan (測試主管) / Kite (機動特勤)</div>
+            </div>
+          </div>
+          <div class="dept-badge-row">
+            <span class="agent-state-badge state-idle" id="badge-qa">
+              <span class="pulse-dot" style="width: 6px; height: 6px;"></span>
+              <span id="badgeText-qa">在線待命</span>
+            </span>
+          </div>
+          <div class="dept-thought-box">
+            <div class="label">白話思緒動態</div>
+            <div id="thoughtText-qa">電腦端與 393×852 手機端測試套件待命，隨時準備進行實機全覆蓋驗收。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 即時白話文進度監控中心與圓桌實況 -->
+    <section class="monitor-section">
+      <div class="monitor-card">
+        <div class="monitor-header">
+          <div class="monitor-header-left">
+            <h2 class="section-title" style="margin: 0;">
+              <span>📡</span>
+              <span>Antigravity 白話文即時進度監控中心</span>
+            </h2>
+          </div>
+          <div class="stage-step-bar" id="stageStepBar">
+            <span class="step-node active" id="stepNode-idle">1. 待命</span>
+            <span class="step-node" id="stepNode-ideation">2. 獨立思考</span>
+            <span class="step-node" id="stepNode-meeting">3. 圓桌激盪</span>
+            <span class="step-node" id="stepNode-approval">4. 創辦人審批</span>
+            <span class="step-node" id="stepNode-executing">5. 落地實作</span>
+            <span class="step-node" id="stepNode-completed">6. 驗收交付</span>
+          </div>
+        </div>
+
+        <!-- 通俗白話文進度動態條 -->
+        <div class="live-human-banner">
+          <div class="human-banner-text" id="liveHumanText">
+            🏢 全體五大部門（功能、外觀、體驗、資安、測試）全員在線待命，隨時可一鍵召開會議！
+          </div>
+          <div class="human-banner-meta" id="liveHumanMeta">
+            即時心跳正常 · 系統平穩
+          </div>
+        </div>
+
+        <!-- 圓桌會議實況與創辦人審批中樞雙欄 -->
+        <div class="meeting-live-container">
+          <!-- 左欄：圓桌會議發言串 -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 6px;">
+                <span>🗣️</span>
+                <span>五組圓桌激盪會議室 (全程繁體中文紀錄)</span>
+              </h3>
+              <span id="transcriptsCount" style="font-size: 12px; color: var(--text-muted);">發言數: 0</span>
+            </div>
+            <div class="dialogue-stream-box" id="dialogueStreamBox">
+              <div style="text-align: center; color: var(--text-muted); font-size: 13px; padding: 40px 0;">
+                尚未開始開會。請在上方點擊「🚀 一鍵開始開會」，即可旁聽各組獨立思考與激烈激盪！
+              </div>
+            </div>
+          </div>
+
+          <!-- 右欄：創辦人審批中樞 -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <h3 style="font-size: 15px; font-weight: 700; color: var(--brand-gold); display: flex; align-items: center; gap: 6px;">
+                <span>⚖️</span>
+                <span>創辦人審批中樞 (Executive Approval Gate)</span>
+              </h3>
+              <span id="approvalBadge" class="agent-state-badge state-idle">等待會議結論</span>
+            </div>
+            
+            <div class="approval-gate-card" id="approvalCard">
+              <div class="approval-title">
+                <span>📋</span>
+                <span id="proposalTitle">專案執行提案審核</span>
+              </div>
+              <div class="proposal-preview-box" id="proposalContent">
+                <p style="color: var(--text-muted); font-size: 13px;">
+                  會議完成後，五大部門將自動整合成綜合提案（包含功能架構、米色美學規範、手機觸控路徑、資安防護與測試指標），等待創辦人 Ian 裁決。
+                </p>
+              </div>
+              <div class="approval-actions" id="approvalButtons">
+                <button class="btn-approve" id="btnApprove" disabled>
+                  <span>✅</span>
+                  <span>核准執行</span>
+                </button>
+                <button class="btn-modify" id="btnModify" disabled>
+                  <span>↩️</span>
+                  <span>指示修改</span>
+                </button>
+                <button class="btn-reject" id="btnReject" disabled>
+                  <span>❌</span>
+                  <span>駁回</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 專案成果交付檔案庫 (Artifacts Vault) -->
+    <section class="vault-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">
+          <span>📦</span>
+          <span>專案成果交付檔案庫 (Artifacts Vault)</span>
+        </h2>
+        <span class="section-hint">經創辦人審批並由 Antigravity 落地之代碼、樣式、資安與雙端測試報告</span>
+      </div>
+
+      <div class="vault-grid" id="artifactsGrid">
+        <!-- 由 JavaScript 動態渲染成果卡片 -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 更新紀錄 Modal (Changelog) -->
+  <div class="modal-overlay" id="changelogModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📜 系統首頁更新紀錄 (Changelog)</h3>
+        <button class="modal-close-btn" id="btnCloseChangelog">&times;</button>
+      </div>
+      <div class="modal-body" id="changelogList">
+        <!-- 由 JS 渲染 changelog.json -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 創辦人登入 Modal -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card" style="max-width: 420px;">
+      <div class="modal-header">
+        <h3>🔐 創辦人登入通道</h3>
+        <button class="modal-close-btn" id="btnCloseLogin">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="login-form-group">
+            <label for="usernameInput">管理員帳號</label>
+            <input type="text" id="usernameInput" placeholder="請輸入帳號" required value="antigravity">
+          </div>
+          <div class="login-form-group">
+            <label for="passwordInput">管理員密碼</label>
+            <input type="password" id="passwordInput" placeholder="請輸入密碼" required value="123456">
+          </div>
+          <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 12px;">
+            確認登入
+          </button>
+          <div class="login-hint">
+            💡 系統管理員測試帳號：<code>antigravity</code> / 密碼：<code>123456</code>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 修改指示彈窗 Modal -->
+  <div class="modal-overlay" id="revisionModal">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>↩️ 創辦人指示修改令</h3>
+        <button class="modal-close-btn" id="btnCloseRevision">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form-group">
+          <label for="revisionInput">請輸入對五大部門的指導意見：</label>
+          <textarea id="revisionInput" rows="4" style="width: 100%; padding: 10px; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-family: inherit; font-size: 13.5px;" placeholder="例如：外觀組請再加強米色留白；資安組請再補充雙因子驗證規範..."></textarea>
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 14px;">
+          <button class="btn-secondary" id="btnCancelRevision">取消</button>
+          <button class="btn-gold" id="btnSubmitRevision">發布修改令</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 程式碼預覽 Modal -->
+  <div class="modal-overlay" id="previewModal">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 id="previewModalTitle">檔案檢視</h3>
+        <button class="modal-close-btn" id="btnClosePreview">&times;</button>
+      </div>
+      <div class="modal-body">
+        <pre id="previewModalCode" style="background: #1C1917; color: #FAF8F5; padding: 16px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 12px; overflow-x: auto; white-space: pre-wrap; line-height: 1.5;"></pre>
+        <div style="display: flex; justify-content: flex-end; margin-top: 14px; gap: 10px;">
+          <button class="btn-secondary" id="btnCopyPreviewCode">📋 複製內容</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 腳本載入 -->
+  <script src="js/antigravity-core.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

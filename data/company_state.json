@@ -1,0 +1,110 @@
+{
+  "companyName": "ian's AI 公司",
+  "stage": "meeting",
+  "statusText": "🗣️ 【Antigravity 聊天室圓桌大會戰進行中】五大部門主管正在此對話室中激盪方案與辯論...",
+  "metaText": "即時連線 Antigravity 核心 · 創辦人開會指令生效中",
+  "currentProject": {
+    "title": "建立「ian's AI 公司」首個實體專案開發計劃與架構方案",
+    "startTime": "2026-09-28 10:35:00",
+    "status": "會議激盪中"
+  },
+  "departments": {
+    "func": {
+      "id": "func",
+      "name": "功能組",
+      "lead": "Alex (首席架構師) / Leo (邏輯工程師)",
+      "icon": "⚙️",
+      "badgeClass": "func",
+      "state": "meeting",
+      "thought": "正在 Antigravity 聊天室發言：已拆解微服務架構與狀態同步協議。"
+    },
+    "visual": {
+      "id": "visual",
+      "name": "外觀組",
+      "lead": "Celia (美學總監) / Emma (風格造型師)",
+      "icon": "🎨",
+      "badgeClass": "visual",
+      "state": "meeting",
+      "thought": "正在 Antigravity 聊天室發言：已確立米色奢華簡約風與雙端響應式格點。"
+    },
+    "ux": {
+      "id": "ux",
+      "name": "體驗組",
+      "lead": "Julian (體驗研究長) / Nina (互動設計師)",
+      "icon": "🖐️",
+      "badgeClass": "ux",
+      "state": "meeting",
+      "thought": "正在 Antigravity 聊天室發言：堅持所有技術狀態轉為通俗白話文呈現。"
+    },
+    "sec": {
+      "id": "sec",
+      "name": "資安組",
+      "lead": "Marcus (資安長 CSO) / Vera (隱私審查員)",
+      "icon": "🛡️",
+      "badgeClass": "sec",
+      "state": "meeting",
+      "thought": "正在 Antigravity 聊天室發言：落實零資料損壞原則與雙向輸入過濾。"
+    },
+    "qa": {
+      "id": "qa",
+      "name": "測試及機動組",
+      "lead": "Ryan (測試主管) / Kite (機動特勤)",
+      "icon": "⚡",
+      "badgeClass": "qa",
+      "state": "meeting",
+      "thought": "正在 Antigravity 聊天室發言：已擬定電腦端與 393×852 手機端全覆蓋測試矩陣。"
+    }
+  },
+  "transcripts": [
+    {
+      "deptId": "func",
+      "author": "Alex (功能組 - 首席架構師)",
+      "badgeClass": "func",
+      "time": "10:35:10",
+      "content": "報告創辦人 Ian！功能組已就位。我們將以 Google Antigravity 作為後端指令中樞，並建立雙向即時通訊資料層，讓您在 Antigravity 聊天室下達的每一句指令，都能毫秒級同步反映在米色監控網站上！",
+      "summary": "建立 Antigravity 聊天室與監控網站雙向同步協議"
+    },
+    {
+      "deptId": "visual",
+      "author": "Celia (外觀組 - 美學總監)",
+      "badgeClass": "visual",
+      "time": "10:35:25",
+      "content": "外觀組贊同！網站介面必須嚴格維持米色簡約極致質感（#FAF8F5 象牙白底襯托 #ECE4D8 暖沙邊框與 #8C6D46 琥珀金），同時在會議進行時，各部門卡片需有呼吸微動效，清楚標註『正在 Antigravity 聊天室發言』。",
+      "summary": "維持米色奢華美學與動態會議呼吸燈"
+    },
+    {
+      "deptId": "ux",
+      "author": "Julian (體驗組 - 體驗長)",
+      "badgeClass": "ux",
+      "time": "10:35:40",
+      "content": "體驗組特別強調：Ian 創辦人在 Antigravity 聊天室開會時，網站端必須以白話文同步轉播『五大組正在聊什麼』，並且手機端 393×852 必須能無阻礙查看這場會議，完全不需要手動重新整理網頁！",
+      "summary": "確保網站白話文自動即時轉播聊天室動態"
+    },
+    {
+      "deptId": "sec",
+      "author": "Marcus (資安組 - 資安長)",
+      "badgeClass": "sec",
+      "time": "10:35:55",
+      "content": "資安組在此簽署安全令：整個 Antigravity 與網站通訊通道全面受防篡改保護，絕對落實『零資料破壞原則』，未經創辦人 Ian 在聊天室或網站親自核准，任何產出物絕不擅自部署！",
+      "summary": "簽署防篡改與零資料破壞安全協議"
+    },
+    {
+      "deptId": "qa",
+      "author": "Ryan (測試及機動組 - 測試主管)",
+      "badgeClass": "qa",
+      "time": "10:36:10",
+      "content": "測試組已完成雙端驗收腳本對接！我們已實時監控電腦端 (1440px) 與手機端 (393×852) 渲染，確認開會時聊天室與網頁同步率 100%，無任何延遲卡頓！請創辦人 Ian 審批本專案執行提案！",
+      "summary": "雙端即時渲染驗收通過，請創辦人審批"
+    }
+  ],
+  "proposal": {
+    "title": "建立「ian's AI 公司」即時連動中樞 (Antigravity ↔ 米色監控站)",
+    "createdAt": "10:36:15",
+    "summary": "五大部門主管已在 Antigravity 對話室完成圓桌大會戰，達成全面技術與美學共識，已整合出即時連動架構提案，敬請創辦人 Ian 裁決審批！",
+    "funcPlan": "實裝 data/company_state.json 即時狀態同步輪詢機制，讓 Antigravity 聊天室的討論與進度 100% 即時反映至監控站。",
+    "visualPlan": "增強米色極簡介面上的『Antigravity 聊天室連線中』視覺呼吸標籤，突出即時性。",
+    "uxPlan": "網頁每 2 秒自動比對更新，創辦人完全免手動重新整理即可看見白話文會議直播。",
+    "secPlan": "強化資安防護邊界，嚴守零資料更動原則，確保審批權限專屬創辦人 Ian。",
+    "qaPlan": "雙端（電腦端 + 393×852 手機端）實機自動化巡檢已整合至自動更新流。"
+  }
+}
